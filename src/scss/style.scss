@@ -1,0 +1,44 @@
+@import "nullstyle";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
+@import "useful";
+
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+
+	background-color: #252b37;
+	color: #164a6a;
+
+	padding: 25px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.form-block {
+	width: 100%;
+	padding: adaptValue(25, 15);
+	overflow: hidden;
+	background-color: white;
+
+	max-width: 850px;
+
+	&.ranges {
+		border-radius: 15px 15px 0 0;
+		border-bottom: 5px solid #252b37;
+	}
+
+	&.chart {
+		border-radius: 0 0 15px 15px;
+	}
+}
+
+@import 'ranges';
+@import 'chart';

@@ -1,0 +1,15 @@
+$maxWidth: 1320; //верхнее пиковое знач на ширине экрана 1280px
+
+@function adaptValue($pcSize, $mbSize) {
+	$addSize: $pcSize - $mbSize;
+	$maxWidth: $maxWidth - 390;
+
+	@return calc(#{$mbSize + px} + #{$addSize} * ((100vw - 390px) / #{$maxWidth}));
+}
+
+@function adaptValueDefine($pcSize, $mbSize, $paramWidth1, $paramWidth2) {
+	$addSize: $pcSize - $mbSize;
+	$width: $paramWidth1 - $paramWidth2;
+
+	@return calc(#{$mbSize + px} + #{$addSize} * ((100vw - #{$paramWidth2 + px}) / #{$width}));
+}

@@ -5,19 +5,25 @@
 	grid-template-columns: auto 1fr;
 	grid-template-rows: 1fr 1fr 1fr 1fr;
 	row-gap: 10px;
-	column-gap: 10px;
+	column-gap: adaptValue(15, 7);
 
 	&__label {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
+		gap: adaptValue(15, 7);
+
+		@media (max-width: 600px) {
+			flex-direction: column-reverse;
+		}
 
 		font-size: adaptValue(26, 15);
 		line-height: 1.5;
 
-		&.bunny,
-		&.scaleway {
-			flex-direction: column;
+		img {
+			max-height: 40px;
+			max-width: 40px;
+			object-fit: cover;
 		}
 	}
 
@@ -37,7 +43,7 @@
 			}
 
 			&.scaleway .progress-bar {
-				background-color: #a349a4;
+				background-color: #4f0599;
 			}
 
 			&.vultr .progress-bar {
@@ -102,7 +108,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-end;
+
+	@media (max-width: 600px) {
+		align-items: center;
+	}
 
 	label {
 		cursor: pointer;

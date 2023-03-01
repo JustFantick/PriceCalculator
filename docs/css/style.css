@@ -260,31 +260,31 @@ input[type=range]::-ms-thumb {
   -ms-grid-rows: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   row-gap: 10px;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
+  -webkit-column-gap: calc(7px + 8 * ((100vw - 390px) / 930));
+     -moz-column-gap: calc(7px + 8 * ((100vw - 390px) / 930));
+          column-gap: calc(7px + 8 * ((100vw - 390px) / 930));
 }
 
 .chart__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: calc(7px + 8 * ((100vw - 390px) / 930));
   font-size: calc(15px + 11 * ((100vw - 390px) / 930));
   line-height: 1.5;
 }
 
-.chart__label.bunny,
-.chart__label.scaleway {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.chart__label img {
+  max-height: 40px;
+  max-width: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .chart__progress-bar-container {
@@ -307,7 +307,7 @@ input[type=range]::-ms-thumb {
 }
 
 .chart__progress-bar-container.lowest.scaleway .progress-bar {
-  background-color: #a349a4;
+  background-color: #4f0599;
 }
 
 .chart__progress-bar-container.lowest.vultr .progress-bar {
@@ -326,9 +326,9 @@ input[type=range]::-ms-thumb {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .bunny__radio label,
@@ -372,6 +372,13 @@ input[type=range]::-ms-thumb {
 }
 
 @media (max-width: 600px) {
+  .chart__label {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
   .chart {
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -422,6 +429,13 @@ input[type=range]::-ms-thumb {
             flex-direction: column-reverse;
   }
 
+  .bunny__radio,
+  .scaleway__radio {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
   .progress-bar {
     height: 0%;
     width: 100%;
@@ -429,34 +443,42 @@ input[type=range]::-ms-thumb {
 }
 
 @media (max-width: 600px){
+
   .chart__label.grid-label-1 {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
   }
+
   .chart__label.grid-label-2 {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
   }
+
   .chart__label.grid-label-3 {
     -ms-grid-row: 2;
     -ms-grid-column: 3;
   }
+
   .chart__label.grid-label-4 {
     -ms-grid-row: 2;
     -ms-grid-column: 4;
   }
+
   .chart__progress-bar-container.backblaze {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
   }
+
   .chart__progress-bar-container.bunny {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
   }
+
   .chart__progress-bar-container.scaleway {
     -ms-grid-row: 1;
     -ms-grid-column: 3;
   }
+
   .chart__progress-bar-container.vultr {
     -ms-grid-row: 1;
     -ms-grid-column: 4;

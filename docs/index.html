@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230301193233">
+	<title>Price calculator</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="form-block ranges">
+			<div class="ranges__item">
+				<h2 id="storageLabel">Storage: <span>50</span> GB</h2>
+				<input type="range" name="storage" id="storage" min="1" max="1000" step="1" />
+
+			</div>
+
+			<div class="ranges__item">
+				<h2 id="transferLabel">Transfer: <span>50</span> GB</h2>
+				<input type="range" name="transfer" id="transfer" min="1" max="1000" step="1" />
+
+			</div>
+
+		</div>
+
+		<div class="form-block chart">
+			<div class="chart__label grid-label-1">Backblaze</div>
+			<div class="chart__progress-bar-container backblaze">
+				<div class="progress-bar"></div>
+				<div class="progress-bar-label"><span></span>$</div>
+			</div>
+
+			<div class="chart__label bunny grid-label-2">
+				<div>Bunny</div>
+				<div class="bunny__radio">
+					<label for="hdd"><input type="radio" name="bunny" id="hdd" value="hdd" checked />hdd</label>
+					<label for="ssd"><input type="radio" name="bunny" id="ssd" value="ssd" />
+						ssd</label>
+
+				</div>
+			</div>
+			<div class="chart__progress-bar-container bunny">
+				<div class="progress-bar"></div>
+				<div class="progress-bar-label"><span></span>$</div>
+			</div>
+
+			<div class="chart__label scaleway grid-label-3">
+				<div>Scaleway</div>
+				<div class="scaleway__radio">
+					<label for="single"><input type="radio" name="scaleway" id="single" value="single" checked />
+						single</label>
+
+					<label for="multi"><input type="radio" name="scaleway" id="multi" value="multi" />
+						multi</label>
+
+				</div>
+			</div>
+			<div class="chart__progress-bar-container scaleway">
+				<div class="progress-bar"></div>
+				<div class="progress-bar-label"><span></span>$</div>
+			</div>
+
+			<div class="chart__label grid-label-4">Vultr</div>
+			<div class="chart__progress-bar-container vultr">
+				<div class="progress-bar"></div>
+				<div class="progress-bar-label"><span></span>$</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="js/app.min.js?_v=20230301193233"></script>
+</body>
+
+</html>
